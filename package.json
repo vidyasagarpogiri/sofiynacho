@@ -1,0 +1,12 @@
+{
+  "name": "nachoysofi",
+  "version": "1.0.0",
+  "description": "Nacho y Sofi wedding site ❤️",
+  "main": "index.js",
+  "repository": "git@github.com:ianaya89/nachoysofi.git",
+  "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "hack": "^0.8.0"
+  }
+}
