@@ -1,0 +1,46 @@
+.main {
+  padding: 20px;
+  text-align: center !important;
+  font-size: 1.5em;
+}
+
+.hack h1,.hack  h2,.hack  h3,.hack  p {
+  font-size: 1.2em;
+}
+
+.hack header {
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.hack header a {
+  margin-left: 20px;
+  border: none;
+}
+
+img {
+  border-radius: 50%;
+  width: 50%;
+}
+
+.hack header a.active {
+  margin-left: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #ff2e88;
+}
+
+.hack h1 {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+footer {
+  font-size: 12px;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 50px;
+  text-align: center;
+  width: 100%;
+  background: #ff2e88;
+}
