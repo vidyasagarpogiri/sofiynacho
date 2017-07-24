@@ -44,3 +44,24 @@ footer {
   width: 100%;
   background: #ff2e88;
 }
+
+@media (max-width: 500px) {
+  .hack header a {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .hack header a.active {
+    border: none;
+  }
+
+  .hack header a.active::before {
+    content: ">  ";
+  }
+
+  .hack header {
+    border-bottom: 1px solid #ff2e88;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+}
