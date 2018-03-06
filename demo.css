@@ -5,9 +5,20 @@ body {
   margin: 0;
 }
 
+.title h1 {
+  color: #DFD5BC;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 10vw;
+}
+
+.title {
+  text-align: center;
+}
+
 #box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0;
@@ -30,7 +41,7 @@ body {
   background-image: url("./asfalt.png") !important;
 }
 
-h1 {
+#moon h1 {
   font-family: star;
   letter-spacing: 5px;
   font-size: 5vw;
