@@ -12,6 +12,13 @@ body {
   font-size: 10vw;
 }
 
+h3 {
+  color: #DFD5BC;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 2vw;
+}
+
 .title {
   text-align: center;
 }
