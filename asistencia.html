@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>👰 💍 🤵 Sofi y Nacho 2018</title>
+    <meta data-n-head="true" content="width=device-width,initial-scale=1" name="viewport">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/manifest.json">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="./css/invite.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+  <style>
+
+    input, select {
+      width: 300px;
+      height: 50px;
+      border: 2px solid #DFD5BC;
+      border-radius: 10px;
+      background: transparent;
+      display: block;
+      color: #fff;
+      font-size: 20px;
+      box-sizing: border-box;
+    }
+
+    input {
+      padding-left: 10px;
+    }
+
+    label {
+      display: block;
+      color: #DFD5BC;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    form div {
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 95%;
+      margin: auto;
+    }
+
+    button {
+      padding: 15px;
+      background: #DFD5BC;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 10px;
+      border: 4px solid #f3f3f3;
+      cursor: pointer;
+    }
+
+    button:hover {
+      text-decoration: underline;
+      background: antiquewhite;
+    }
+
+    .loader{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* LOADER 1 */
+
+#loader-1:before, #loader-1:after{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 10px solid transparent;
+  border-top-color: #DFD5BC;
+}
+
+#loader-1:before{
+  z-index: 100;
+  animation: spin 1s infinite;
+}
+
+#loader-1:after{
+  border: 10px solid #ccc;
+}
+
+@keyframes spin{
+  0%{
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100%{
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+  <div class="stars2"></div>
+  <div class="stars3"></div>
+
+  <div id="box">
+
+    <div class="title">
+      <h1>¡Nos Casamos!</h1>
+      <small style="font-size: 16px; color: #fff">
+        Te pedimos confirmar asistencia ya sea por si o por no.
+        <br>
+        Indicanos todos los nombres separados por coma (,) de las personas que estas confirmando.
+      </small>
+    </div>
+    <div v-if="isLoading" class="loader" id="loader-1"></div>
+    <form v-else-if="!isLoading && !isDone" @submit.prevent="submit">
+      <div>
+        <label for="names">Nombre/s y Apellido/s</label>
+        <input id="names" type="text" v-model="names" required>
+      </div>
+
+      <div>
+        <label for="qty">Cantidad de Personas que Confirman</label>
+        <input id="qty" type="number" v-model="qty" required min="1" step="1">
+      </div>
+
+      <div>
+        <label for="assisting">Confirmo Asistencia</label>
+        <select id="assisting" v-model="assisting">
+          <option value="yes">SI</option>
+          <option value="no">NO</option>
+        </select>
+      </div>
+
+      <div style="text-align: right">
+        <button>Confirmar!</button>
+      </div>
+    </form>
+    <div v-else>
+      <h3>Gracias por tu confirmación!</h3>
+    </div>
+    <h3>
+      <i class="fas fa-gift"></i>
+      <a href="https://alistate.net/sofi-nacho">
+        Lista de Regalos
+      </a>
+    </h3>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#box',
+
+      data () {
+        return {
+          names: '',
+          qty: 1,
+          assisting: 'yes',
+          isLoading: false,
+          isDone: false
+        }
+      },
+
+      methods: {
+        submit() {
+          let { names, qty, assisting } = this
+          this.isLoading = true
+          return fetch('https://sheetsu.com/apis/v1.0su/5e18f30a4d99', {
+            body: JSON.stringify({ names, qty, assisting }), // must match 'Content-Type' header
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *omit
+            headers: {
+              'user-agent': 'Mozilla/4.0 MDN Example',
+              'content-type': 'application/json'
+            },
+            method: 'POST', // *GET, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *same-origin
+            redirect: 'follow', // *manual, error
+            referrer: 'no-referrer', // *client
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            this.isDone = true
+            this.isLoading = false
+          })
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>
