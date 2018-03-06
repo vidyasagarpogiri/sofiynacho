@@ -6,6 +6,28 @@ body {
   overflow: hidden;
 }
 
+@media(min-width:800px){
+  body {
+    overflow: auto
+  }
+
+  #box {
+    height: auto !important;
+  }
+
+  #moon h1 {
+    letter-spacing: 20px !important;
+  }
+
+  .title h1 {
+    font-size: 4vw !important;
+  }
+
+  h3 {
+    font-size: 2vw !important;
+  }
+}
+
 .title h1 {
   color: #DFD5BC;
   text-transform: uppercase;
@@ -16,7 +38,7 @@ body {
 h3 {
   color: #DFD5BC;
   font-weight: 200;
-  font-size: 3vw;
+  font-size: 4vw;
 }
 
 h3 a {
@@ -45,8 +67,8 @@ h3 a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70vw;
-  height: 70vw;
+  width: 60vw;
+  height: 60vw;
   justify-content: space-around;
   max-width: 90%;
   background: #DFD5BC;
