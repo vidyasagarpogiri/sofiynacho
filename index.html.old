@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>❤️ Nacho y Sofi 2018</title>
+    <meta data-n-head="true" content="width=device-width,initial-scale=1" name="viewport">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/manifest.json">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    
+    <meta http-equiv="refresh" content="0; URL='https://alistate.net/sofi-nacho'" />
+
+    <link rel="stylesheet" href="./css/hack.css">
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  <body class="hack">
+    <div class="main container -center">
+      <header>
+        <nav>
+          <a href="#" class="active">❤️</a>
+          <a href="./about.html">👰🤵 Nosotros</a>
+          <a href="./place.html">🎉 El Salon</a>
+          <a href="mailto:ignacio.anaya89@gmail.com">💌 Dejanos tu Mensaje</a>
+        </nav>
+      </header>
+
+      <h1>❤️ Nacho y Sofi</h1>
+      <p>
+        > 👰 💍 🤵 Nos casamos!!!
+      </p>
+
+      <h2>📅 31 de Marzo 2018</h2>
+      <h3>🎉 <a href="#">La Escondida de Dorrego</a></h3>
+
+      <footer>
+        <p>Copyright &copy; 2017</p>
+      </footer>
+    </div>
+  </body>
+</html>
